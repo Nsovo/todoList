@@ -16,8 +16,8 @@ app.set('view engine' , 'ejs');
 
 var show = function (req, res, next) {
   var hideInfo = true;
-  res.send(hideInfo)
-  next()
+    res.send(hideInfo);
+    next();
 } 
 
 
@@ -39,18 +39,24 @@ app.get('/todo', function(req, res) {
 })
 
 /* update an item on the to do list */
-app.patch('/todo/edit/', urlencodedParser, function(req, res){
-    if (req.body.edittext != '') {
-        todolist.splice(req.body.todoid, 1, req.body.edittext);
-    }
-    res.redirect('/todo');
+.get('/todo/edit/:id/:text', urlencodedParser, function (req, res) {
+    
+    if (req.params.id !== '') {
+        var updatetodo = req.params.text;
+        res.render('todo.ejs', { todolist, updatetodo });
+
+            //if (req.body.edittext != '') {
+            //    todolist.splice(req.body.todoid, 1, req.body.edittext);
+            //}
+        }
+      // res.redirect('/todo');
 })
 
 /* Deletes an item from the to do list */
 .get('/todo/delete/:id', function(req, res) {
-    if (req.params.id != '') {
+    if (req.params.id != '') 
         todolist.splice(req.params.id, 1);
-    }
+    
     res.redirect('/todo');
 })
 
@@ -59,6 +65,6 @@ app.patch('/todo/edit/', urlencodedParser, function(req, res){
     res.redirect('/todo');
 })
 
-.listen(8080, function(){
-    console.log('Server started on port 8080')
-});
+.listen(8080, function() {
+    console.log('Server started on port 8080');
+    });

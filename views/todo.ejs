@@ -1,18 +1,18 @@
 <% include partials/header %>
+<div ng-app>
         <h1>My todolist</h1>
         <ul>
-            <% showdata %>
         <% todolist.forEach(function(todo, index) { %>
             <li>
                 <a href="/todo/delete/<%= index %>">✘</a> 
-                <button type="button" (click)="showdata">Toggle Component</button>
+				 <a href="/todo/edit/<%= index %>/<%= todo %>">➕</a> 
                 <%- todo %>
             </li>
         <% }); %>
         </ul>
 
         <form action="/todo/add/" method="post">
-            <p>
+            <p class="add">
                 <label for="newtodo">What shoud I do?</label>
                 <input type="text" name="newtodo" id="newtodo" autofocus />
                 <input type="submit" />
@@ -21,13 +21,21 @@
 
 
         <div >
-         <form action="/todo/edit/" method="post">
             <p>
+				<% if  (typeof updatetodo !== "undefined")  {%>
+				 <form action="/todo/add/" method="post">
                 <label for="updatetodo">What shoud I do?</label>
-                <input type="text" name="updatetodo" id="updatetodo" autofocus />
-                <input type="submit" />
+                <input type="text"  name="updatetodo" id="updatetodo" value=<%=updatetodo%>  autofocus />
+                <input type="submit" text ="update" />
+				 
+				</form>
+				 <% } %>
             </p>
-        </form>
     </div>
+	</div>
 
 <% include partials/footer %>
+
+<script>
+  if  (typeof updatetodo !== "undefined") { $(.add).hide(); }
+</script>
