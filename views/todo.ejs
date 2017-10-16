@@ -11,26 +11,25 @@
         <% }); %>
         </ul>
 
+<% if  (typeof updatetodo === "undefined")  {%>
         <form action="/todo/add/" method="post">
-            <p class="add">
+            <label>add</label>
                 <label for="newtodo">What shoud I do?</label>
                 <input type="text" name="newtodo" id="newtodo" autofocus />
                 <input type="submit" />
-            </p>
         </form>
-
+ <% } %>
 
         <div >
-            <p>
 				<% if  (typeof updatetodo !== "undefined")  {%>
-				 <form action="/todo/add/" method="post">
+				<form action="/todo/edit/<%= id %>"" method="post">
+                    <label>update</label>
                 <label for="updatetodo">What shoud I do?</label>
                 <input type="text"  name="updatetodo" id="updatetodo" value=<%=updatetodo%>  autofocus />
                 <input type="submit" text ="update" />
 				 
 				</form>
 				 <% } %>
-            </p>
     </div>
 	</div>
 

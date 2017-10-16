@@ -6,20 +6,6 @@ const app = express();
 
 let todolist = [];
 app.set('view engine' , 'ejs');
-//app.set('views', path.join(__dirname, 'views'))
-
-//let showdata= false;
-// edit() {
- //   this.exists = !this.exists;
-  //}
-
-
-var show = function (req, res, next) {
-  var hideInfo = true;
-    res.send(hideInfo);
-    next();
-} 
-
 
 
 
@@ -43,14 +29,21 @@ app.get('/todo', function(req, res) {
     
     if (req.params.id !== '') {
         var updatetodo = req.params.text;
-        res.render('todo.ejs', { todolist, updatetodo });
-
-            //if (req.body.edittext != '') {
-            //    todolist.splice(req.body.todoid, 1, req.body.edittext);
-            //}
+        var id = req.params.id;
+        res.render('todo.ejs', { todolist, updatetodo ,id});
         }
-      // res.redirect('/todo');
 })
+
+/* update an item on the to do list */
+.post('/todo/edit/:id', urlencodedParser, function(req, res) {
+
+    console.log(req.params.id)
+      if (req.body.updatetodo != '') 
+               todolist.splice(req.body.todoid, 1, req.body.updatetodo);
+            
+    res.redirect('/todo');
+})
+
 
 /* Deletes an item from the to do list */
 .get('/todo/delete/:id', function(req, res) {
