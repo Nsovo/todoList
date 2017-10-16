@@ -1,18 +1,13 @@
-<!DOCTYPE html>
-
-<html>
-    <head>
-        <title>My todolist</title>
-        <style>
-            a {text-decoration: none; color: black;}
-        </style>
-    </head>
-
-    <body>
+<% include partials/header %>
         <h1>My todolist</h1>
         <ul>
+            <% showdata %>
         <% todolist.forEach(function(todo, index) { %>
-            <li><a href="/todo/delete/<%= index %>">✘</a> <%- todo %></li>
+            <li>
+                <a href="/todo/delete/<%= index %>">✘</a> 
+                <button type="button" (click)="showdata">Toggle Component</button>
+                <%- todo %>
+            </li>
         <% }); %>
         </ul>
 
@@ -23,5 +18,16 @@
                 <input type="submit" />
             </p>
         </form>
-    </body>
-</html>
+
+
+        <div >
+         <form action="/todo/edit/" method="post">
+            <p>
+                <label for="updatetodo">What shoud I do?</label>
+                <input type="text" name="updatetodo" id="updatetodo" autofocus />
+                <input type="submit" />
+            </p>
+        </form>
+    </div>
+
+<% include partials/footer %>
