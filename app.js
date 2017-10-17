@@ -24,7 +24,7 @@ app.get('/todo', function(req, res) {
     res.redirect('/todo');
 })
 
-/* update an item on the to do list */
+/* Update an item on the to do list */
 .get('/todo/edit/:id/:text', urlencodedParser, function (req, res) {
     
     if (req.params.id !== '') {
@@ -34,7 +34,7 @@ app.get('/todo', function(req, res) {
         }
 })
 
-/* update an item on the to do list */
+/* Update an item on the to do list */
 .post('/todo/edit/:id', urlencodedParser, function(req, res) {
 
     console.log(req.params.id)

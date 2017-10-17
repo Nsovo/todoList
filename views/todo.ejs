@@ -1,5 +1,5 @@
 <% include partials/header %>
-<div ng-app>
+<div >
         <h1>My todolist</h1>
         <ul>
         <% todolist.forEach(function(todo, index) { %>
@@ -11,26 +11,22 @@
         <% }); %>
         </ul>
 
+ <label for="updatetodo">What shoud I do?</label>
+
 <% if  (typeof updatetodo === "undefined")  {%>
         <form action="/todo/add/" method="post">
-            <label>add</label>
-                <label for="newtodo">What shoud I do?</label>
                 <input type="text" name="newtodo" id="newtodo" autofocus />
                 <input type="submit" />
         </form>
  <% } %>
 
-        <div >
 				<% if  (typeof updatetodo !== "undefined")  {%>
 				<form action="/todo/edit/<%= id %>"" method="post">
-                    <label>update</label>
-                <label for="updatetodo">What shoud I do?</label>
                 <input type="text"  name="updatetodo" id="updatetodo" value=<%=updatetodo%>  autofocus />
                 <input type="submit" text ="update" />
 				 
 				</form>
 				 <% } %>
-    </div>
 	</div>
 
 <% include partials/footer %>
