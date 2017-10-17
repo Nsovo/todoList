@@ -28,8 +28,8 @@ app.get('/todo', function(req, res) {
 .get('/todo/edit/:id/:text', urlencodedParser, function (req, res) {
     
     if (req.params.id !== '') {
-        var updatetodo = req.params.text;
-        var id = req.params.id;
+        let updatetodo = req.params.text;
+        let id = req.params.id;
         res.render('todo.ejs', { todolist, updatetodo ,id});
         }
 })
@@ -39,8 +39,8 @@ app.get('/todo', function(req, res) {
 
     console.log(req.params.id)
       if (req.body.updatetodo != '') 
-               todolist.splice(req.body.todoid, 1, req.body.updatetodo);
-            
+               todolist.splice(req.params.id, 1, req.body.updatetodo);
+
     res.redirect('/todo');
 })
 
