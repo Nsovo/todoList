@@ -34,3 +34,6 @@ Visit http://localhost:8080 in your browser
 
 ### Solution
 Explain what you have done here and why...
+
+1.I have added an edit method( get and post)
+2.Installed Jasmine for the tsts

@@ -9,7 +9,14 @@
   },
   "author": "riaan@entersekt.com",
   "description": "Basic to do list exercise",
+  "scripts": {
+    "test": "karma start test/karma.conf.js"
+  },
   "devDependencies": {
-    "jasmine-node": "^1.14.5"
+    "jasmine-core": "^2.3.4",
+    "karma": "^0.12.31",
+    "karma-chrome-launcher": "^0.1.12",
+    "karma-jasmine": "^0.3.8",
+    "karma-phantomjs-launcher": "^1.0.4"
   }
 }
