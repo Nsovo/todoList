@@ -1,6 +1,7 @@
-var request = require("request");
-var helloWorld = require("../app.js")
-var base_url = "http://localhost:8080/"
+var angular = require('angular');
+var request = require('request');
+var helloWorld = require("../app.js");
+var base_url = "http://localhost:8080/";
 
 describe("Todo Server", function() {
   describe("GET /", function() {

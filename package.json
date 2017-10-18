@@ -10,13 +10,18 @@
   "author": "riaan@entersekt.com",
   "description": "Basic to do list exercise",
   "scripts": {
-    "test": "karma start test/karma.conf.js"
+    "test": "karma start ./karma.conf.js"
   },
   "devDependencies": {
-    "jasmine-core": "^2.3.4",
-    "karma": "^0.12.31",
+    "browserify": "^14.4.0",
+    "grunt-karma": "^2.0.0",
+    "jasmine-core": "^2.8.0",
+    "karma": "^0.12.37",
+    "karma-browserify": "^5.1.1",
     "karma-chrome-launcher": "^0.1.12",
     "karma-jasmine": "^0.3.8",
-    "karma-phantomjs-launcher": "^1.0.4"
+    "karma-phantomjs-launcher": "^1.0.4",
+    "phantomjs-prebuilt": "^2.1.15",
+    "watchify": "^3.9.0"
   }
 }
