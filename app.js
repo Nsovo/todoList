@@ -36,7 +36,6 @@ app.get('/todo', function(req, res) {
 /* Update an item on the to do list */
 .post('/todo/edit/:id', urlencodedParser, function(req, res) {
 
-    console.log(req.params.id)
       if (req.body.updatetodo != '') 
                todolist.splice(req.params.id, 1, req.body.updatetodo);
 

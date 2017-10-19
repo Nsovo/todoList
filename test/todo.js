@@ -37,9 +37,7 @@ describe('TODO', () => {
       });
 });
 
-  /*
-  * Test the /GET/:id route
-  */
+  //  The /GET/:id route
   describe('/GET/:id  to do item', () => {
       it('it should GET an item by the given id', (done) => {
         let item = { id: 1, text: 'task 4'};
@@ -47,12 +45,27 @@ describe('TODO', () => {
             .get('/todo/edit/:id' + item.id)
             .send(item)
             .end((err, res) => {
-                console.log('item' + JSON.stringify(res))
                 res.should.have.status(200);
                 res.body.should.be.a('object');
               done();
             });
         });
+  });
+
+  //The /DELETE/:id route
+  describe('/DELETE/:id item', () => {
+      it('it should DELETE a item given the id', (done) => {
+        let item = [{ id: 1, text: 'task 4'},{ id: 2, text: 'task 4'}];
+                chai.request(baseUrl)
+                .delete(baseUrl + '/todo/delete/:id/' + item.id)
+                .end((err, res) => {
+                    res.should.have.status(200);
+                    res.body.should.be.a('object');
+                    res.body.should.be.empty;
+                   // res.body.result.should.have.property('n').eql(1);
+                  done();
+                });
+      });
   });
 
 });
