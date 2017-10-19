@@ -1,6 +1,7 @@
 {
   "name": "my-todolist",
   "version": "0.1.0",
+  "main": "app.js",
   "dependencies": {
     "body-parser": "^1.16.0",
     "ejs": "^2.5.5",
@@ -10,18 +11,12 @@
   "author": "riaan@entersekt.com",
   "description": "Basic to do list exercise",
   "scripts": {
-    "test": "karma start ./karma.conf.js"
+    "start": "SET NODE_ENV=dev && node server.js",
+    "test": "mocha --timeout 10000"
   },
   "devDependencies": {
-    "browserify": "^14.4.0",
-    "grunt-karma": "^2.0.0",
-    "jasmine-core": "^2.8.0",
-    "karma": "^0.12.37",
-    "karma-browserify": "^5.1.1",
-    "karma-chrome-launcher": "^0.1.12",
-    "karma-jasmine": "^0.3.8",
-    "karma-phantomjs-launcher": "^1.0.4",
-    "phantomjs-prebuilt": "^2.1.15",
-    "watchify": "^3.9.0"
+    "chai": "^3.5.0",
+    "chai-http": "^2.0.1",
+    "mocha": "^2.4.5"
   }
 }
