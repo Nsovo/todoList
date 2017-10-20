@@ -56,6 +56,8 @@ app.get('/todo', function(req, res) {
     res.redirect('/todo');
 })
 
-.listen(8080, function() {
+if(!module.parent){ 
+    app.listen(3000); 
     console.log('Server started on port 8080');
-    });
+
+}

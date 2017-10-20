@@ -8,7 +8,6 @@ let baseUrl = 'http://localhost:8080/'
 chai.use(chaiHttp);
 describe('TODO', () => {
 
-
   // The /GET route
   describe('/GET display ', () => {
       it('it should GET all todo list', (done) => {
@@ -35,7 +34,7 @@ describe('TODO', () => {
               done();
             });
       });
-});
+  });
 
   //  The /GET/:id route
   describe('/GET/:id  to do item', () => {

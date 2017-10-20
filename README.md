@@ -10,6 +10,9 @@
 ### Run
 `node app.js`
 
+### Run Test
+`mocha`
+
 Visit http://localhost:8080 in your browser
 
 ### High level application requirements
@@ -36,4 +39,5 @@ Visit http://localhost:8080 in your browser
 Explain what you have done here and why...
 
 1.I have added an edit method( get and post)
-2.Installed Jasmine for the tsts
+2.Installed and save inthe pacakage Mocha and Chai using npm for testing purposes.
+3. 

@@ -15,8 +15,10 @@
     "test": "mocha --timeout 10000"
   },
   "devDependencies": {
+    "@angular/cli": "^1.4.9",
     "chai": "^3.5.0",
     "chai-http": "^2.0.1",
+    "istanbul": "^0.4.5",
     "mocha": "^2.4.5"
   }
 }
