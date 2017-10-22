@@ -8,11 +8,13 @@ let baseUrl = 'http://localhost:8080/'
 chai.use(chaiHttp);
 describe('TODO', () => {
 
+ 
+
   // The /GET route
   describe('/GET display ', () => {
       it('it should GET all todo list', (done) => {
         chai.request(baseUrl)
-            .get(baseUrl +'/todo')
+            .get(baseUrl +'todo')
             .end((err, res) => {
                 res.should.have.status(200);
                 res.body.should.be.empty;

@@ -11,7 +11,8 @@ app.set('view engine' , 'ejs');
 
 /* The to do list and the form are displayed */
 app.get('/todo', function(req, res) {
-    res.render('todo.ejs', { todolist, clickHandler:"func1();" });
+    var showdata = true;
+    res.render('todo.ejs', { todolist,showdata, clickHandler:"func1();" });
 })
 
 /* Adding an item to the to do list */
@@ -56,8 +57,6 @@ app.get('/todo', function(req, res) {
     res.redirect('/todo');
 })
 
-if(!module.parent){ 
-    app.listen(3000); 
+.listen(8080, function() {
     console.log('Server started on port 8080');
-
-}
+    });
