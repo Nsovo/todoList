@@ -37,6 +37,7 @@ app.get('/todo', function(req, res) {
 /* Update an item on the to do list */
 .post('/todo/edit/:id', urlencodedParser, function(req, res) {
 
+    console.log(req.params.id)
       if (req.body.updatetodo != '') 
                todolist.splice(req.params.id, 1, req.body.updatetodo);
 
@@ -57,6 +58,11 @@ app.get('/todo', function(req, res) {
     res.redirect('/todo');
 })
 
+<<<<<<< HEAD
 .listen(8080, function() {
     console.log('Server started on port 8080');
+=======
+.listen(3000, function() {
+    console.log('Server started on port 3000');
+>>>>>>> f6669688d7797113c645ef405a5a07debd3872e0
     });

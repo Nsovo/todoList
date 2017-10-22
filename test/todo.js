@@ -1,9 +1,8 @@
-
 let chai = require('chai');
 let chaiHttp = require('chai-http');
 let server = require('../app.js');
 let should = chai.should();
-let baseUrl = 'http://localhost:8080/'
+let baseUrl = 'http://localhost:3000/'
 
 chai.use(chaiHttp);
 describe('TODO', () => {
@@ -63,7 +62,6 @@ describe('TODO', () => {
                     res.should.have.status(200);
                     res.body.should.be.a('object');
                     res.body.should.be.empty;
-                   // res.body.result.should.have.property('n').eql(1);
                   done();
                 });
       });

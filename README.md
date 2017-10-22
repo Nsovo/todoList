@@ -10,10 +10,15 @@
 ### Run
 `node app.js`
 
+Visit http://localhost:8080 in your browser
+
 ### Run Test
 `mocha`
 
-Visit http://localhost:8080 in your browser
+### Docker
+docker-compose build
+
+
 
 ### High level application requirements
 1. Multiple users should be able to view the shared public todo list
@@ -40,4 +45,4 @@ Explain what you have done here and why...
 
 1.I have added an edit method( get and post)
 2.Installed and save inthe pacakage Mocha and Chai using npm for testing purposes.
-3. 
+
